@@ -152,6 +152,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0;
   }
   .card{
     width: 100%;
@@ -164,9 +165,10 @@
   }
   .footer{
     flex-direction: column;
-    position: relative;
+    position: sticky;
     bottom: 0;
- 
+    width: 100%;
+
     background-color: #0070f3;
   }
 }

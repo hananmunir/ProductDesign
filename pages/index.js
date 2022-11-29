@@ -89,11 +89,11 @@ export default function Home() {
         
    
       </motion.div>
+      </main>
+
         <footer className={styles.footer}>
           {activeCardData.title}
         </footer>
-      </main>
-
     </div>
   )
 }
