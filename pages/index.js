@@ -2,13 +2,12 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useState,useRef,useEffect } from 'react'
 import {motion} from 'framer-motion'
+import CustomCarousel from '../Components/Carousel'
 export default function Home() {
   const [width, setWidth] = useState(0)
-  const [height, setHeight] = useState(0)
   const carousel=useRef(null)
   useEffect(() => {
     setWidth(carousel.current.scrollWidth-carousel.current.offsetWidth)
-    setHeight(carousel.current.scrollHeight-carousel.current.offsetHeight)
 
 
   }, [])
@@ -61,12 +60,14 @@ export default function Home() {
       </Head>
 
       <main>
+   
       <motion.div ref={carousel} className={styles.carousel}
       whileTap={{cursor:"grabbing"}}
       >
         <motion.div 
-        drag={width>0?"x":"y"}
-        dragConstraints={{right:width,left:-width,bottom:height}}
+        drag={width  > 0?"x":false}
+        dragConstraints={{right:width,left:-width}}
+        dragElastic={0.1}
         className={styles.innercarousel}>
           {dummycards.map((card,index)=>{
             return(
