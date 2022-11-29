@@ -43,7 +43,7 @@ export default function CustomCarousel() {
   const cardRef = useRef(null);
   useEffect(() => {
     try {
-      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+      setWidth(carousel.current.offsetWidth - 500);
       setIsLoaded(true);
     } catch (e) {
       console.log(e);
